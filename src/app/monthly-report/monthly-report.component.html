@@ -1,0 +1,64 @@
+<div class=" container">
+        <div class="row postion-fix pt-6">
+                <div class="col-lg-2 col-12" style="margin-top: 2px;">
+                        <b>
+                                <h4>Select Month :-</h4>
+                        </b>
+                </div>
+                <div class="col-lg-1 col-12">
+                        <input class="form-control" type="month" name="month" [(ngModel)]="monthyear.month">
+                </div>
+                <div class="col-lg-1  col-12">
+                        <select [(ngModel)]="monthyear.type" name="type" class="form-select">
+                                <option value="all">All</option>
+                                <option value="income">Income</option>
+                                <option value="expense">Expense</option>
+                        </select>
+                </div>
+                <div class="col-lg-1  col-12">
+                        <button class="form-control btn-outline-primary" type="submit"
+                                (click)="getRecord()">Submit</button>
+                </div>
+        </div>
+        <div class="pt-150">
+                <table class="table table-hover ">
+                        <thead>
+                                <tr class="text-center">
+                                        <th>Id</th>
+                                        <th>Date</th>
+                                        <th>Type</th>
+                                        <th>Name</th>
+                                        <th>Amount</th>
+                                </tr>
+                        </thead>
+                        <tbody class="text-center">
+                                <tr *ngFor="let item of incomeExpenses index as i">
+                                        <td>{{i+1}}</td>
+                                        <td>{{item.trasDate |date:'dd/MM/YYYY'}}</td>
+                                        <td>{{item.type}}</td>
+                                        <td>{{item.name}}</td>
+                                        <td *ngIf="item.type=='Expense'" style="color: red">{{item.amount}}</td>
+                                        <td *ngIf="item.type=='Income'" style="color: green;">{{item.amount}}</td>
+                                </tr>
+                                <tr *ngIf="showdiv">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td > <b>Balance Report </b> </td>
+                                        <td> <span [ngStyle]="getBalanceSheetStyle()"
+                                                        style="border-top-style: inset;"><b>{{balanceSheet}}</b></span>
+                                        </td>
+                                </tr>
+                                <tr *ngIf="!showdiv">
+                                        <td colspan="5">No data found</td>
+                                      
+                                </tr>
+                        </tbody>
+                </table>
+                <!-- <div *ngIf="showdiv" class="balance">
+                        <span style="margin-left: 53rem;"> <b>Balance Report </b> </span>
+                        <span [ngStyle]="getBalanceSheetStyle()"
+                                style="margin-left:10rem; border-top-style: inset;"><b>{{balanceSheet}}</b></span>
+                </div> -->
+        </div>
+</div>

@@ -1,0 +1,23 @@
+.navbar{
+    box-shadow: 0px 5px 10px 0px #aaa;
+    width: 100%;
+    background:#fff;
+    color: gray;
+    opacity: 0.85;
+    z-index: 1001;
+    font-family: emoji;
+}
+
+.c-nav{
+    position: fixed;
+    width: 100%;
+    z-index: 1001;
+}
+
+ .navbar-light .navbar-nav .nav-link:hover {
+    color: #117964;
+}
+
+h5{
+    font-weight: bold;
+}

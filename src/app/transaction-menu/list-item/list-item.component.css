@@ -1,0 +1,21 @@
+.section-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.section-item .div-item {
+  width: 900px;
+}
+ .section-item .div-item h4 {
+  margin-left: 10rem;
+  text-transform: uppercase;
+}
+
+.section-item .div-item .income h4 {
+  color: #28a745;
+}
+
+.section-item .div-item .expenses h4 {
+  color: #dc3545;
+} 

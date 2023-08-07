@@ -1,0 +1,14 @@
+.position{
+    position: fixed;
+    display: block;
+    width: 100%;
+    z-index: 1000;
+    padding-top: 150px;
+}
+
+.fix{
+    padding-top: 350px;
+}
+.border-bottom {
+    border-bottom: 4px solid rgba(0, 0, 0, 0.1)!important;
+}

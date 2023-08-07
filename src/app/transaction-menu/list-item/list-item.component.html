@@ -1,0 +1,22 @@
+<section class="section-item">
+  <div class="container div-item">
+    <div class="row">
+      <div class="col-6 income">
+        <h4>Income</h4>
+        <div *ngFor="let item of incomeExpenses">
+          <div *ngIf="item.type=='Income'" class="description">
+            <app-card-item [item]="item"></app-card-item>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 expenses">
+        <h4>Expenses</h4>
+        <div *ngFor="let item of incomeExpenses">
+          <div *ngIf="item.type=='Expense'" class="description">
+            <app-card-item [item]="item"></app-card-item>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

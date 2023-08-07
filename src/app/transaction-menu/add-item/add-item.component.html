@@ -1,0 +1,22 @@
+<section class="section-content">
+        <div class="row">
+            <div class="col-3">
+                <input type="date" class="form-control" name="trasDate" [(ngModel)]="incomeExpense.trasDate">
+            </div>
+            <div class="col-3">
+                <input type="number" name="amount" id="amount" required min="-100000" max="100000" class="form-control"
+                    placeholder="Amount" [(ngModel)]="incomeExpense.amount">
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" required placeholder="Description" name="description"
+                        [(ngModel)]="incomeExpense.name">
+                    &nbsp; &nbsp;
+                    <div class="input-group-append">
+                        <button class="btn" type="submit" ngClass="btn-outline-success" (click)="addDetail()"> Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>

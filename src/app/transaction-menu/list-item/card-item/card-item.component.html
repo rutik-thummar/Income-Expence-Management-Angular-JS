@@ -1,0 +1,65 @@
+ <div class="card-item">
+  <div class="card">
+    
+   <div id="btnOpenForm" (click)="onCardClick(item.id)" [ngClass]="{ 'income': item.amount >= 0, 'expenses': item.amount < 0}"> 
+    <div class="item">
+      <div class="date">
+        <p>{{ item.trasDate |date:'dd/MM/YYYY'}}</p>
+      </div>
+      <div *ngIf="item.type=='Income'" class="description">
+        <p>{{ item.name }}</p>
+      </div>
+      <div *ngIf="item.type=='Expense'" class="description">
+        <p>{{ item.name }}</p>
+      </div>
+      <div class="amount">
+        <p>{{ item.amount }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="x-icon-button" type="button" (click)="deleteRecord(item.id)">
+    <span aria-hidden="true">&times;</span>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-popup-bg">
+  <div class="form-container">
+    <button id="btnCloseForm" class="close-button"> X </button>
+    <h1 id="center" class="text-center">Leave</h1>
+    <form action="" ngNativeValidate>
+      <div class="form-group">
+        <label for=""><b>From Date</b></label>
+        <input type="date" class="form-control" name="fromDate" required />
+      </div>
+      <div class="form-group">
+        <label for=""><b>To Date</b></label>
+        <input class="form-control" type="date" name="toDate" required />
+      </div>
+      <div class="form-group">
+        <label for=""><b>Reason</b></label>
+        <textarea class="form-control" name="reason" rows="4" cols="50" name="reason"
+          placeholder="Describe Reason here..." required></textarea>
+      </div>
+      <button type="button" class="btn btn-outline-primary "><b>Submit</b></button>
+    </form>
+  </div>
+</div>
+
+
+
+
+ 
